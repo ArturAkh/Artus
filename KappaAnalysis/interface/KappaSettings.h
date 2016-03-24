@@ -241,6 +241,7 @@ public:
 	IMPL_SETTING(int, NJets);
 	IMPL_SETTING(int, NBTaggedJets);
 	IMPL_SETTING(int, NNonBTaggedJets);
+	IMPL_SETTTNG(int, NGenTaus);
 	
 	IMPL_SETTING(int, MinNElectrons);
 	IMPL_SETTING(int, MinNMuons);

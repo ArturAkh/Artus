@@ -162,3 +162,4 @@ public:
 	
 	void Init(KappaSettings const& settings) override;
 };
+

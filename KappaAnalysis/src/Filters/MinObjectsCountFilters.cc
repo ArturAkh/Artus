@@ -114,3 +114,19 @@
 		));
 	}
 
+
+/** Filter checking for the existence of at least the given number of generator taus.
+ *  Required config tag: MinNGenTaus
+ */
+	std::string MinGenTausCountFilter::GetFilterId() const {
+		return "MinGenTausCountFilter";
+	}
+
+	void MinGenTausCountFilter::Init(KappaSettings const& settings) {
+		this->m_cuts.push_back(std::pair<double_extractor_lambda, CutRange>(
+				[](KappaEvent const& event, KappaProduct const& product) {
+					return event.m_genTaus->size();
+				},
+				CutRange::LowerThresholdCut(double(settings.GetMinNGenTaus()))
+		));
+	}

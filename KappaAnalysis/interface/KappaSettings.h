@@ -241,7 +241,6 @@ public:
 	IMPL_SETTING(int, NJets);
 	IMPL_SETTING(int, NBTaggedJets);
 	IMPL_SETTING(int, NNonBTaggedJets);
-	IMPL_SETTTNG(int, NGenTaus);
 	
 	IMPL_SETTING(int, MinNElectrons);
 	IMPL_SETTING(int, MinNMuons);
@@ -249,6 +248,7 @@ public:
 	IMPL_SETTING(int, MinNJets);
 	IMPL_SETTING(int, MinNBTaggedJets);
 	IMPL_SETTING(int, MinNNonBTaggedJets);
+	IMPL_SETTING(int, MinNGenTaus);
 	
 	IMPL_SETTING(int, MaxNElectrons);
 	IMPL_SETTING(int, MaxNMuons);
@@ -261,6 +261,9 @@ public:
 	IMPL_SETTING(int, MinNPU);
 	IMPL_SETTING(int, MaxNPU);
 	
+	//settings for KappaGenTauDecayModeFilter
+	IMPL_SETTING(std::string, KappaGenTauDecayMode);
+	
 	IMPL_SETTING_DEFAULT(size_t, MinNMatchedElectrons, 0);
 	IMPL_SETTING_DEFAULT(size_t, MinNMatchedMuons, 0);
 	IMPL_SETTING_DEFAULT(size_t, MinNMatchedTaus, 0);
@@ -272,7 +275,7 @@ public:
 	// std::vector<std::string> test;
 	IMPL_SETTING_STRINGLIST_DEFAULT(JetLowerPtCuts, {});
 	IMPL_SETTING_STRINGLIST_DEFAULT(NonBTaggedJetLowerPtCuts, {});
-		
+	
 	IMPL_SETTING_STRINGLIST_DEFAULT(ElectronUpperAbsEtaCuts, {});
 	IMPL_SETTING_STRINGLIST_DEFAULT(MuonUpperAbsEtaCuts, {});
 	IMPL_SETTING_STRINGLIST_DEFAULT(TauUpperAbsEtaCuts, {});

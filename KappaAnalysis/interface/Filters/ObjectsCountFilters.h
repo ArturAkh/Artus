@@ -82,15 +82,3 @@ public:
 	void Init(KappaSettings const& settings) override;
 };
 
-
-/** Filter checking for the existence of exactly the given number of generator taus.
- *  Required config tag: NGenTaus
- */
-class GenTausCountFilter: public CutRangeFilterBase<KappaTypes> {
-public:
-
-	typedef typename std::function<double(KappaEvent const&, KappaProduct const&)> double_extractor_lambda;
-
-	std::string GetFilterId() const override;
-	void Init(KappaSettings const& settings) override;
-};

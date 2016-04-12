@@ -81,3 +81,4 @@ public:
 	std::string GetFilterId() const override;
 	void Init(KappaSettings const& settings) override;
 };
+

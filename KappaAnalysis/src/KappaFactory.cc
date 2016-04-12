@@ -58,6 +58,7 @@
 #include "Artus/KappaAnalysis/interface/Filters/HCALNoiseFilter.h"
 #include "Artus/KappaAnalysis/interface/Filters/nPUFilter.h"
 #include "Artus/KappaAnalysis/interface/Filters/ZFilter.h"
+#include "Artus/KappaAnalysis/interface/Filters/KappaGenTauDecayModeFilter.h"
 
 // consumer
 #include "Artus/KappaAnalysis/interface/Consumers/KappaCutFlowHistogramConsumer.h"
@@ -216,8 +217,6 @@ FilterBaseUntemplated * KappaFactory::createFilter ( std::string const& id )
 		return new BTaggedJetsCountFilter();
 	else if(id == NonBTaggedJetsCountFilter().GetFilterId())
 		return new NonBTaggedJetsCountFilter();
-	else if(id == GenTausCountFilter().GetFilterId())
-		return new GenTausCountFilter();
 	else if(id == MinElectronsCountFilter().GetFilterId())
 		return new MinElectronsCountFilter();
 	else if(id == MinMuonsCountFilter().GetFilterId())
@@ -230,6 +229,8 @@ FilterBaseUntemplated * KappaFactory::createFilter ( std::string const& id )
 		return new MinBTaggedJetsCountFilter();
 	else if(id == MinNonBTaggedJetsCountFilter().GetFilterId())
 		return new MinNonBTaggedJetsCountFilter();
+	else if(id == MinGenTausCountFilter().GetFilterId())
+		return new MinGenTausCountFilter();
 	else if(id == MaxElectronsCountFilter().GetFilterId())
 		return new MaxElectronsCountFilter();
 	else if(id == MaxMuonsCountFilter().GetFilterId())
@@ -302,6 +303,8 @@ FilterBaseUntemplated * KappaFactory::createFilter ( std::string const& id )
 		return new nPUFilter();
 	else if(id == ZFilter().GetFilterId())
 		return new ZFilter();
+	else if(id == KappaGenTauDecayModeFilter().GetFilterId())
+		return new KappaGenTauDecayModeFilter();
 	else
 		return FactoryBase::createFilter( id );
 }
